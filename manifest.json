@@ -1,7 +1,7 @@
 {
 "name": "pwa_deneme",
 "short_name": "deneme",
-"start_url": "/index.html",
+"start_url": "/pwadeneme/index.html",
 "display": "standalone",
 "description": "pwa_deneme_için_yapılmış",
 "lang": " The default language of your application",
