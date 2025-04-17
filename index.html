@@ -32,12 +32,12 @@
         --primary-color: #007bff;
         --secondary-color: #6c757d;
         --border-color: #ddd;
-        --navbar-bg: rgba(51,45,45,1);
+        --navbar-bg: rgb(22, 20, 20);
         --hover-shadow: rgba(0, 0, 0, 0.658) 5px 25px 50px -12px;
-        --navbarlinkcolor: rgba(255, 255, 255, 0.55);
+        --navbarlinkcolor: rgba(255, 255, 255, 0.822);
 
         /* Arama butonu ve giriş kutusu */
-        --search-toggle-color: rgba(255, 255, 255, 0.55);
+        --search-toggle-color: rgba(255, 255, 255, 0.568);
         --search-input-bg: rgba(255, 255, 255, 0.2);
         --search-input-text: #222;
       }
@@ -65,7 +65,7 @@
 
       a {
         text-decoration: none;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         color: var(--navbarlinkcolor);
       }
 
@@ -179,6 +179,8 @@
       
       .nav__link a:hover {
         background-color: var(--search-toggle-color);
+        border-radius: 10px;
+        animation:  blink 0.7s ease 0s 1 forwards;   
       }
 
       .d-flex{
@@ -227,7 +229,7 @@
 
         /* Butona tıklanınca açılma efekti */
         .search-container.active .search-input {
-            width: 15vw;
+            width: 10vw;
             opacity: 1;
             padding: 5px 15px;
         }
@@ -343,6 +345,7 @@
           height: 100%;
           display: flex;
           justify-content: space-between;
+          gap: clamp(0px, calc((100vw - 992px) * 0.0568), 48px);
         }
 
         .d-flex{
@@ -491,7 +494,7 @@
 
       .card{
         background: var(--card-bg);
-        padding: 15px;
+        padding: 3px 20px;
         border-radius: 12px;
         gap: 5px;
         box-shadow: 0 2px 4px var(--card-shadow);
@@ -646,7 +649,7 @@
         .simple-bar-chart > .item{
           height: calc(1% * var(--val));
           background-color: var(--clr, var(--item-default-color));
-          opacity: 0.75;
+          opacity: 0.84;
           position: relative;
           animation: item-height 1s ease forwards
         }
@@ -659,7 +662,7 @@
 
       .gray { background: #4A4A4A; }
       .green { background: #357b37; }
-      .lightgreen { background: #6DBF6D; }
+      .lightgreen { background: #32a969; }
       .orange { background: #F4A261; }
       .blue { background: #4682B4; }
       .red { background: #D9534F; }
@@ -914,9 +917,14 @@
 
           }
           /*CALENDAR*/
+          .card-doughnut-container{
+            margin-top: 10px;
+            height: 100%;
+
+          }
 
           /* Ana Container */
-          .card-doughnut-container {
+          .doughnut-container {
               position: relative;
               width: 60%;
               max-width: 300px;
@@ -937,11 +945,11 @@
           }
 
           .chart-labels.top{
-              top: 20%;
+              top: 25%;
           }
 
           .chart-labels.bottom{
-              bottom: 20%;
+              bottom: 10%;
           }
 
           .chart-labels p{
@@ -1269,32 +1277,32 @@
             <!-- BARCHART -->
             <div class="simple-bar-chart">
             
-            <div class="item" style="--clr: #5EB344; --val: 80">
+            <div class="item" style="--clr: #4a4849; --val: 80">
                 <div class="label">Label 1</div>
                 <div class="value">80%</div>
             </div>
             
-            <div class="item" style="--clr: #FCB72A; --val: 50">
+            <div class="item" style="--clr: #357b37; --val: 50">
                 <div class="label">Label 2</div>
                 <div class="value">50%</div>
             </div>
             
-            <div class="item" style="--clr: #F8821A; --val: 100">
+            <div class="item" style="--clr: #29a060; --val: 100">
                 <div class="label">Label 3</div>
                 <div class="value">100%</div>
             </div>
             
-            <div class="item" style="--clr: #E0393E; --val: 15">
+            <div class="item" style="--clr: #F4A261; --val: 15">
                 <div class="label">Label 4</div>
                 <div class="value">15%</div>
             </div>
             
-            <div class="item" style="--clr: #963D97; --val: 1">
+            <div class="item" style="--clr: #4682B4; --val: 10">
                 <div class="label">Label 5</div>
-                <div class="value">1%</div>
+                <div class="value">10%</div>
             </div>
             
-            <div class="item" style="--clr: #069CDB; --val: 90">
+            <div class="item" style="--clr: #D9534F; --val: 90">
                 <div class="label">Label 6</div>
                 <div class="value">90%</div>
             </div>
@@ -1369,18 +1377,19 @@
               </a>
           </div>
       
-          
+          <div class="card-doughnut-container">
             <div class="chart-labels top">
               <span class="top-left">Okuma <p>%25</p></span>
               <span class="top-right">İzleme <p>%25</p></span>
             </div>
-            <div class="card-doughnut-container">
+            <div class="doughnut-container">
             <canvas id="doughnutChart"></canvas>
             </div>
             <div class="chart-labels bottom">
               <span class="bottom-left">Ödev <p>%25</p> </span>
               <span class="bottom-right">Forum <p>%25</p> </span>
             </div>
+          </div>
           
         </div>
         <!-- Card6 -->
